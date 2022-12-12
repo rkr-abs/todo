@@ -1,53 +1,11 @@
-# Project Name
+# Requirements
 
-	Project description.
+	* Should have one inputfield and add button
+	* The add button is disabled until the user gives any input.
+	* All, Active, Completed tabs and selectAll checkbox are displayed once the value is added.
+	* Added todo are shown in All and Active tab along with a checkbox and delete button each.
+	* When a chechbox for a todo is selected that todo goes to the completed tab and is not in Active.
+	* Clear completed button displays atleast one of the todo checkbox is selected
+	* When user click on the todo the add button should change into update.
+	* Once the update button is clicked, it should be change the particular todo.
 
-## Keys
-
-* A short list of things to understand the package, better.
-
-## Notes
-
-* Though pnpm is the preferred package manager, package-lock is still kept to widen support.
-
-## Usage
-### Setup
-#### Linux / Mac
-```sh
-$ git clone https://github.com/Laufire/react-starter.git project-name
-$ cd project-name
-$ sh ./adopt.sh
-$ sh ./setup.sh
-```
-
-#### Windows
-```sh
-C:\> git clone https://github.com/Laufire/react-starter.git project-name
-C:\> cd project-name
-C:\> .\adopt.bat
-```
-
-### Development
-#### Linux, Windows & Mac
-```
-$ # Run all tests.
-$  pnpm run test-dev
-
-$ # Run a particular test (matching the given pattern).
-$ pnpm run test-dev -- --testPathPattern "target"
-
-$ # Run all tests with coverage.
-$  pnpm run test-ci
-```
-
-## ToDo
-
-* Have branches to allow for multiple templates.
-	* One for a clean one to start new projects.
-	* One with basic examples.
-
-* Audit the packages. It's not done, yet. Due to poor understanding of the dependencies.
-
-* Try moving away from create-react-app, as it introduces a lot of constraints, including reconfiguring jest.
-
-* Think of replacing npm with pnpm.
