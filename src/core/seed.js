@@ -1,3 +1,5 @@
-const seed = {};
+const seed = {
+	inputValue: [],
+};
 
 export default seed;

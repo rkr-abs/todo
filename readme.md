@@ -15,20 +15,20 @@
 	* Should have one InputField and add button
 			* Click the add button to add todo.
 			* Disable the button until user gives any value.
-			* Once a todo is added clear the inputfield.
+			* Once a todo is added clear the input field.
 			* Multiple todos can be added.
 
 	* User should be able to remove the added todos
 			* Each added todo should have delete button.
 			* Click the delete button to delete the added todo.
 
-	* User should be able to mark the active/added todos as completed
+	* User should be able to mark any active/added todos as completed
 			* Each added todo should have checkbox.
 			* Select any todo to mark it as completed.
 
 	* User should be able to remove all completed todos
+			* clearCompleted button is used to clear all the completed todos.
 			* clearCompleted button displays atleast one of the todos checkbox is selected.
-			* clearCompleted button is used to clear all the completed todos
 
 	* User should be able to edit the todos.
 			* When click the added todo add button transform into update button.
