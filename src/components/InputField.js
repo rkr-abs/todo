@@ -13,7 +13,11 @@ const InputField = ({ actions, state }) =>
 				(evt) => actions.disable(evt.target.value)
 			}
 		/>
-		<Button variant="contained" disabled={ state.disable }> Add </Button>
+		<Button
+			variant="contained"
+			disabled={ state.disable }
+			onClick={ () => actions.addValue() }
+		> Add </Button>
 	</Box>;
 
 export default InputField;

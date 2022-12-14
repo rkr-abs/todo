@@ -1,6 +1,7 @@
 const seed = {
 	inputValue: [],
 	disable: true,
+	input: '',
 
 };
 
