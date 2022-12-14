@@ -1,9 +1,9 @@
 import { rndString } from '@laufire/utils/random';
 
 const eight = 8;
-const id = rndString(eight);
+
 const todo = ({ input }) => ({
-	id: id,
+	id: rndString(eight),
 	name: input,
 });
 

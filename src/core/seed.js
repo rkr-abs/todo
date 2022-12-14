@@ -4,7 +4,7 @@ const seed = {
 		name: 'test1',
 	},
 	{
-		id: 1,
+		id: 2,
 		name: 'test2',
 	}],
 	input: '',
