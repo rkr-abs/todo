@@ -1,11 +1,13 @@
+import { rndString } from '@laufire/utils/random';
 
-const disable = (context) => ({
-	disable: context.data === '',
+const input = (context) => ({
 	input: context.data,
 });
+// eslint-disable-next-line no-magic-numbers
+const id = rndString(8);
 const addValue = ({ state }) => ({
-	inputValues: [...state.inputValues, state.input],
+	todos: [...state.todos, { id: id, name: state.input }],
 });
-const actions = { disable, addValue };
+const actions = { input, addValue };
 
 export default actions;

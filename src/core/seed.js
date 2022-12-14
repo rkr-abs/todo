@@ -1,6 +1,12 @@
 const seed = {
-	inputValues: ['test1', 'test2'],
-	disable: true,
+	todos: [{
+		id: 1,
+		name: 'test1',
+	},
+	{
+		id: 1,
+		name: 'test2',
+	}],
 	input: '',
 };
 

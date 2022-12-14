@@ -1,6 +1,7 @@
-import { TextField, Box } from '@mui/material';
+import { Box } from '@mui/material';
 import { React } from 'react';
 import AddButton from './AddButton';
+import InputText from './InputText';
 
 const InputField = (context) =>
 	<Box sx={ {
@@ -8,12 +9,7 @@ const InputField = (context) =>
 	} }
 	>
 		To-Do:
-		<TextField
-			placeholder="Add task..."
-			onChange={
-				(evt) => context.actions.disable(evt.target.value)
-			}
-		/>
+		<InputText { ...context }/>
 		<AddButton { ...context }/>
 	</Box>;
 
