@@ -1,14 +1,19 @@
 import { TextField, Button, Box } from '@mui/material';
 import { React } from 'react';
 
-const InputField = () =>
+const InputField = ({ actions, state }) =>
 	<Box sx={ {
 		display: 'flex', justifyContent: 'center', alignItems: 'center',
 	} }
 	>
 		To-Do:
-		<TextField placeholder="Add task..."/>
-		<Button variant="contained" disabled={ true }> Add </Button>
+		<TextField
+			placeholder="Add task..."
+			onChange={
+				(evt) => actions.disable(evt.target.value)
+			}
+		/>
+		<Button variant="contained" disabled={ state.disable }> Add </Button>
 	</Box>;
 
 export default InputField;
