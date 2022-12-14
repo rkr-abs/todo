@@ -9,7 +9,7 @@ const AddButton = ({ actions, state }) => {
 		<Button
 			variant="contained"
 			disabled={ isEmpty }
-			onClick={ () => actions.addValue() }
+			onClick={ () => actions.setTodo() }
 		> Add </Button>) ;
 };
 

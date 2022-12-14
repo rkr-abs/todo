@@ -1,13 +1,11 @@
-import { rndString } from '@laufire/utils/random';
+import addTodo from '../services/addTodo';
 
-const input = (context) => ({
+const setInput = (context) => ({
 	input: context.data,
 });
-// eslint-disable-next-line no-magic-numbers
-const id = rndString(8);
-const addValue = ({ state }) => ({
-	todos: [...state.todos, { id: id, name: state.input }],
+const setTodo = (context) => ({
+	todos: addTodo(context),
 });
-const actions = { input, addValue };
+const actions = { setInput, setTodo };
 
 export default actions;

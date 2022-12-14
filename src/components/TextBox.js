@@ -1,12 +1,13 @@
 import { TextField } from '@mui/material';
 import { React } from 'react';
 
-const InputText = ({ actions }) =>
+const TextBox = ({ actions }) =>
 	<TextField
 		placeholder="Add task..."
 		onChange={
-			(evt) => actions.input(evt.target.value)
+			(evt) => actions.setInput(evt.target.value)
 		}
+		label="TO-DO :)"
 	/>;
 
-export default InputText;
+export default TextBox;
