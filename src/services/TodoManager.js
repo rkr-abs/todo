@@ -10,4 +10,8 @@ const todo = ({ input }) => ({
 const addTodo = ({ state }) =>
 	[...state.todos, todo(state)];
 
-export default addTodo;
+const TodoManager = {
+	addTodo,
+};
+
+export default TodoManager;

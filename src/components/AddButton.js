@@ -1,3 +1,4 @@
+import AddTaskIcon from '@mui/icons-material/AddTask';
 import { Button } from '@mui/material';
 import { React } from 'react';
 import isInputEmpty from '../services/hasInputValue';
@@ -9,8 +10,10 @@ const AddButton = ({ actions, state }) => {
 		<Button
 			variant="contained"
 			disabled={ isEmpty }
-			onClick={ () => actions.setTodo() }
-		> Add </Button>) ;
+			onClick={ () => actions.addTodo() }
+			sx={ { margin: '2px', padding: '12px' } }
+		> <AddTaskIcon sx={ { padding: '2px' } }/>
+			Add </Button>) ;
 };
 
 export default AddButton;
