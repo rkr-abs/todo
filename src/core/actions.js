@@ -4,7 +4,7 @@ const disable = (context) => ({
 	input: context.data,
 });
 const addValue = ({ state }) => ({
-	inputValue: [state.input],
+	inputValues: [...state.inputValues, state.input],
 });
 const actions = { disable, addValue };
 
