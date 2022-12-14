@@ -5,6 +5,7 @@ const setInput = (context) => ({
 });
 const addTodo = (context) => ({
 	todos: TodoManager.addTodo(context),
+	input: '',
 });
 const actions = { setInput, addTodo };
 
