@@ -1,7 +1,7 @@
 import AddTaskIcon from '@mui/icons-material/AddTask';
 import { Button } from '@mui/material';
 import { React } from 'react';
-import isInputEmpty from '../services/hasInputValue';
+import isInputEmpty from '../services/isInputEmpty';
 
 const AddTodo = ({ actions, state }) => {
 	const isEmpty = isInputEmpty(state);

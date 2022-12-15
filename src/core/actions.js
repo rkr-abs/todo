@@ -7,6 +7,7 @@ const setInput = (context) => ({
 const deleteTodo = (context) => ({
 	todos: TodoManager.deleteTodo(context),
 });
+
 const addTodo = (context) => ({
 	todos: TodoManager.addTodo(context),
 	todoInput: '',

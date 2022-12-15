@@ -2,7 +2,7 @@ import { Button } from '@mui/material';
 import { React } from 'react';
 import ClearTwoToneIcon from '@mui/icons-material/ClearTwoTone';
 
-const DeleteButton = ({ data, actions }) =>
+const DeleteTodo = ({ data, actions }) =>
 	<Button
 		variant="contained"
 		color="error"
@@ -11,4 +11,4 @@ const DeleteButton = ({ data, actions }) =>
 	>
 		<ClearTwoToneIcon/> </Button> ;
 
-export default DeleteButton;
+export default DeleteTodo;

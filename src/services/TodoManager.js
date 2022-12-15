@@ -7,6 +7,7 @@ const getTodo = ({ todoInput }) => ({
 	id: rndString(eight),
 	name: todoInput,
 });
+
 const deleteTodo = ({ state: { todos }, data: { id }}) =>
 	filter(todos, (todo) => todo.id !== id);
 

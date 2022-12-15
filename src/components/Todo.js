@@ -1,10 +1,10 @@
 import { Box, Checkbox } from '@mui/material';
 import { React } from 'react';
-import DeleteButton from './DeleteButton';
+import DeleteTodo from './DeleteTodo';
 
 const Todo = ({ data, ...context }) => <Box>
 	<Checkbox color="success"/>
 	{data.name}
-	<DeleteButton { ...{ ...context, data } }/></Box>;
+	<DeleteTodo { ...{ ...context, data } }/></Box>;
 
 export default Todo;
