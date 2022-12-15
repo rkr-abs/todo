@@ -2,13 +2,13 @@ import { rndString } from '@laufire/utils/random';
 
 const eight = 8;
 
-const todo = ({ input }) => ({
+const getTodo = ({ todoInput }) => ({
 	id: rndString(eight),
-	name: input,
+	name: todoInput,
 });
 
 const addTodo = ({ state }) =>
-	[...state.todos, todo(state)];
+	[...state.todos, getTodo(state)];
 
 const TodoManager = {
 	addTodo,

@@ -1,11 +1,14 @@
 import TodoManager from '../services/TodoManager';
 
 const setInput = (context) => ({
-	input: context.data,
+	todoInput: context.data,
+});
+const deleteTodo = (context) => ({
+
 });
 const addTodo = (context) => ({
 	todos: TodoManager.addTodo(context),
-	input: '',
+	todoInput: '',
 });
 const actions = { setInput, addTodo };
 

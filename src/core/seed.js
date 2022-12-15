@@ -7,7 +7,7 @@ const seed = {
 		id: 2,
 		name: 'test2',
 	}],
-	input: '',
+	todoInput: '',
 };
 
 export default seed;
