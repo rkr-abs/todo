@@ -1,15 +1,14 @@
 import { Button } from '@mui/material';
 import { React } from 'react';
 import ClearTwoToneIcon from '@mui/icons-material/ClearTwoTone';
-import { peek } from '@laufire/utils/debug';
 
-const DeleteButton = ({ id }) =>
+const DeleteButton = ({ data, actions }) =>
 	<Button
 		variant="contained"
 		color="error"
 		size="small"
-		onClick={ () => peek(id) }
+		onClick={ () => actions.deleteTodo(data) }
 	>
-		<ClearTwoToneIcon/>	 </Button> ;
+		<ClearTwoToneIcon/> </Button> ;
 
 export default DeleteButton;
