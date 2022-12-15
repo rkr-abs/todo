@@ -2,12 +2,12 @@ import { Box } from '@mui/material';
 import { React } from 'react';
 import './App.scss';
 import InputField from './components/InputField';
-import Todos from './components/Todos';
+import TabLists from './components/TabLists';
 
 const App = (context) =>
 	<Box className="App">
 		<InputField { ...context }/>
-		<Todos { ...context }/>
+		<TabLists { ...context }/>
 	</Box>;
 
 export default App;

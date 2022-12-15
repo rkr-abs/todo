@@ -8,9 +8,10 @@ const AddTodo = ({ actions, state }) => {
 
 	return (
 		<Button
-			variant="contained"
-			disabled={ isEmpty }
-			onClick={ () => actions.addTodo() }
+			{ ...{ variant: 'contained',
+				disabled: isEmpty,
+				onClick: () => actions.addTodo() } }
+
 			sx={ { margin: '2px', padding: '12px' } }
 		> <AddTaskIcon sx={ { padding: '2px' } }/>
 			Add </Button>) ;
