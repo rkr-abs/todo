@@ -4,7 +4,7 @@ import { TabContext, TabPanel, TabList } from '@mui/lab';
 import Todos from './Todos';
 import CompletedTodos from './CompletedTodos';
 
-const TabLists = (context) => {
+const ToDoLists = (context) => {
 	const { state, actions } = context;
 
 	return <TabContext value={ state.value }>
@@ -17,10 +17,10 @@ const TabLists = (context) => {
 				<Tab label="Completed" value="2"/>
 			</TabList>
 			<TabPanel value="0"><Todos { ...context }/></TabPanel>
-			<TabPanel value="1"><CompletedTodos { ...context }/></TabPanel>
+			<TabPanel value="2"><CompletedTodos { ...context }/></TabPanel>
 
 		</Box>
 	</TabContext>;
 };
 
-export default TabLists;
+export default ToDoLists;
