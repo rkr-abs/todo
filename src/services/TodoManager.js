@@ -16,14 +16,14 @@ const deleteTodo = ({ state: { todos }, data: { id }}) =>
 const addTodo = ({ state }) =>
 	[...state.todos, getTodo(state)];
 
-const getTodos = ({ state }) =>
-	(state.value === two
+const filterTodo = ({ state }) =>
+	(state.tabValue === two
 		? filter(state.todos, (todo) => todo.isActive !== true)
-		: state.value === 1
+		: state.tabValue === 1
 			? filter(state.todos, (todo) => todo.isActive === true)
 			: state.todos);
 
-const setStatus = ({ state, data }) =>
+const changeStatus = ({ state, data }) =>
 	map(state.todos, (todo) =>
 		(todo.id === data.id
 			? { ...todo, isActive: !data.isActive }
@@ -32,8 +32,8 @@ const setStatus = ({ state, data }) =>
 const TodoManager = {
 	addTodo,
 	deleteTodo,
-	getTodos,
-	setStatus,
+	filterTodo,
+	changeStatus,
 };
 
 export default TodoManager;

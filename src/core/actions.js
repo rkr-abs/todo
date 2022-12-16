@@ -3,12 +3,12 @@ import TodoManager from '../services/TodoManager';
 const setInput = (context) => ({
 	todoInput: context.data,
 });
-const setStatus = (context) => ({
-	todos: TodoManager.setStatus(context),
+const changeStatus = (context) => ({
+	todos: TodoManager.changeStatus(context),
 });
 
-const toggleMenu = (context) => ({
-	value: context.data,
+const toggleTab = (context) => ({
+	tabValue: context.data,
 });
 const deleteTodo = (context) => ({
 	todos: TodoManager.deleteTodo(context),
@@ -22,8 +22,8 @@ const actions = {
 	setInput,
 	addTodo,
 	deleteTodo,
-	toggleMenu,
-	setStatus,
+	toggleTab,
+	changeStatus,
 };
 
 export default actions;

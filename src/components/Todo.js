@@ -8,15 +8,15 @@ const props = ({ data, actions }) => ({
 	color: 'success',
 	checkedIcon: <Favorite/>,
 	onClick: (evt) =>
-		actions.setStatus({ isActive: evt.target.checked, id: data.id }),
+		actions.changeStatus({ isActive: evt.target.checked, id: data.id }),
 });
 
 const Todo = (context) => {
-	const { data } = context;
+	const { data: { name }} = context;
 
 	return <Box>
 		<Checkbox { ...props(context) }/>
-		<span>{data.name}</span>
+		<span>{name}</span>
 		<DeleteTodo { ...context }/></Box>;
 };
 

@@ -15,7 +15,7 @@ const seed = {
 		isActive: false,
 	}],
 	todoInput: '',
-	value: 0,
+	tabValue: 0,
 };
 
 export default seed;

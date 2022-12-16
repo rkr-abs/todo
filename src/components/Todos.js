@@ -11,7 +11,7 @@ const Todos = (context) =>
 		flexDirection: 'column',
 	} }
 	>
-		{map(TodoManager.getTodos(context), (todo, i) =>
+		{map(TodoManager.filterTodo(context), (todo, i) =>
 			<Todo key={ i } { ...{ ...context, data: todo } }/>)}
 	</Box>;
 

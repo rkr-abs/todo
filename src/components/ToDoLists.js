@@ -6,24 +6,24 @@ import Todos from './Todos';
 const props = {
 	justifyContent: 'center',
 	display: 'flex',
+	borderColor: 'divider',
 };
 
 const ToDoLists = (context) => {
-	const { state, actions } = context;
+	const { state: { tabValue }, actions } = context;
 
-	return <TabContext value={ state.value }>
+	return <TabContext value={ tabValue }>
 		<Box sx={ props }>
 			<TabList
-				sx={ { justifyContent: 'center' } }
 				onChange={ (event, tabIndex) =>
-					actions.toggleMenu(tabIndex) }
+					actions.toggleTab(tabIndex) }
 			>
 				<Tab label="All"/>
 				<Tab label="Active"/>
 				<Tab label="Completed"/>
 			</TabList>
 		</Box>
-		<TabPanel value={ state.value }><Todos { ...context }/></TabPanel>
+		<TabPanel value={ tabValue }><Todos { ...context }/></TabPanel>
 	</TabContext>;
 };
 
