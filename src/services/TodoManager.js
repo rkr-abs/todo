@@ -2,6 +2,7 @@ import { filter } from '@laufire/utils/collection';
 import { rndString } from '@laufire/utils/random';
 
 const eight = 8;
+const two = 2;
 
 const getTodo = ({ todoInput }) => ({
 	id: rndString(eight),
@@ -14,13 +15,17 @@ const deleteTodo = ({ state: { todos }, data: { id }}) =>
 const addTodo = ({ state }) =>
 	[...state.todos, getTodo(state)];
 
-const CompletedTodos = (todos) =>
-	filter(todos, (todo) => todo.status === 'completed');
+const getTodos = ({ state }) =>
+	(state.value === two
+		? filter(state.todos, (todo) => todo.isActive !== true)
+		: state.value === 1
+			? filter(state.todos, (todo) => todo.isActive === true)
+			: state.todos);
 
 const TodoManager = {
 	addTodo,
 	deleteTodo,
-	CompletedTodos,
+	getTodos,
 };
 
 export default TodoManager;

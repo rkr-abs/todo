@@ -5,7 +5,7 @@ const setInput = (context) => ({
 });
 
 const toggleMenu = (context) => ({
-	value: String(context.data),
+	value: context.data,
 });
 const deleteTodo = (context) => ({
 	todos: TodoManager.deleteTodo(context),

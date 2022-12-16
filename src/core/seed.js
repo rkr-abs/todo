@@ -2,18 +2,20 @@ const seed = {
 	todos: [{
 		id: 1,
 		name: 'test1',
-		status: 'completed',
+		isActive: true,
 	},
 	{
 		id: 2,
 		name: 'test2',
+		isActive: false,
 	},
 	{
 		id: 3,
 		name: 'test 3',
+		isActive: false,
 	}],
 	todoInput: '',
-	value: '0',
+	value: 0,
 };
 
 export default seed;
