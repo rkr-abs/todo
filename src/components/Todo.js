@@ -1,13 +1,14 @@
+import { peek } from '@laufire/utils/debug';
 import { FavoriteBorder, Favorite } from '@mui/icons-material';
 import { Box, Checkbox } from '@mui/material';
 import { React } from 'react';
 import DeleteTodo from './DeleteTodo';
 
-const props = ({ data, actions }) => ({
+const props = ({ data }) => ({
 	icon: <FavoriteBorder/>,
 	color: 'success',
 	checkedIcon: <Favorite/>,
-	onClick: () => actions.isChecked(data.id),
+	onClick: () => peek(data.id),
 });
 
 const Todo = (context) => {
