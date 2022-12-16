@@ -16,12 +16,11 @@ const deleteTodo = ({ state: { todos }, data: { id }}) =>
 const addTodo = ({ state }) =>
 	[...state.todos, getTodo(state)];
 
-const filterTodo = ({ state }) =>
-	(state.tabValue === two
-		? filter(state.todos, (todo) => todo.isActive !== true)
-		: state.tabValue === 1
-			? filter(state.todos, (todo) => todo.isActive === true)
-			: state.todos);
+const filterTodo = {
+	0: (todos) => todos,
+	1: (todos) => filter(todos, (todo) => todo.isActive === true),
+	2: (todos) => filter(todos, (todo) => todo.isActive !== true),
+};
 
 const changeStatus = ({ state, data }) =>
 	map(state.todos, (todo) =>
