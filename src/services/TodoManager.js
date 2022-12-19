@@ -2,13 +2,14 @@ import { filter, map } from '@laufire/utils/collection';
 import { rndString } from '@laufire/utils/random';
 
 const eight = 8;
-const two = 2;
 
 const getTodo = ({ todoInput }) => ({
 	id: rndString(eight),
 	name: todoInput,
 	isActive: true,
 });
+
+const isInputEmpty = ({ todoInput }) => todoInput === '';
 
 const deleteTodo = ({ state: { todos }, data: { id }}) =>
 	filter(todos, (todo) => todo.id !== id);
@@ -22,8 +23,8 @@ const filterTodo = {
 	2: (todos) => filter(todos, (todo) => todo.isActive !== true),
 };
 
-const changeStatus = ({ state, data }) =>
-	map(state.todos, (todo) =>
+const changeStatus = ({ state: { todos }, data }) =>
+	map(todos, (todo) =>
 		(todo.id === data.id
 			? { ...todo, isActive: !data.isActive }
 			: todo));
@@ -33,6 +34,7 @@ const TodoManager = {
 	deleteTodo,
 	filterTodo,
 	changeStatus,
+	isInputEmpty,
 };
 
 export default TodoManager;

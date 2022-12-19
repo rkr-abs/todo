@@ -6,6 +6,7 @@ import Todo from './Todo';
 
 const Todos = (context) => {
 	const { state: { tabValue, todos }} = context;
+	const filteredTodos = TodoManager.filterTodo[tabValue](todos);
 
 	return (
 		<Box sx={ {
@@ -14,7 +15,7 @@ const Todos = (context) => {
 			flexDirection: 'column',
 		} }
 		>
-			{map(TodoManager.filterTodo[tabValue](todos), (todo, i) =>
+			{map(filteredTodos, (todo, i) =>
 				<Todo key={ i } { ...{ ...context, data: todo } }/>)}
 		</Box>);
 };

@@ -1,11 +1,11 @@
 import AddTaskIcon from '@mui/icons-material/AddTask';
 import { Box, Button } from '@mui/material';
 import { React } from 'react';
-import isInputEmpty from '../services/isInputEmpty';
+import TodoManager from '../services/TodoManager';
 
 const props = ({ actions, state }) => ({
 	variant: 'contained',
-	disabled: isInputEmpty(state),
+	disabled: TodoManager.isInputEmpty(state),
 	onClick: () => actions.addTodo(),
 });
 
