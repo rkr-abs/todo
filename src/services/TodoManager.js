@@ -14,6 +14,9 @@ const isInputEmpty = ({ todoInput }) => todoInput === '';
 const deleteTodo = ({ state: { todos }, data: { id }}) =>
 	filter(todos, (todo) => todo.id !== id);
 
+const clearCompletedTodos = ({ state: { todos }}) =>
+	filter(todos, (todo) => todo.isActive !== false);
+
 const addTodo = ({ state }) =>
 	[...state.todos, getTodo(state)];
 
@@ -35,6 +38,7 @@ const TodoManager = {
 	filterTodo,
 	changeStatus,
 	isInputEmpty,
+	clearCompletedTodos,
 };
 
 export default TodoManager;
