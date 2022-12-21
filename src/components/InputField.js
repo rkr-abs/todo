@@ -4,9 +4,9 @@ import AddTodo from './AddTodo';
 import TodoInput from './TodoInput';
 
 const InputField = (context) =>
-	<Box sx={ {
+	<Box { ...{ sx: {
 		display: 'flex', justifyContent: 'center', alignItems: 'center',
-	} }
+	}} }
 	>
 		<TodoInput { ...context }/>
 		<AddTodo { ...context }/>

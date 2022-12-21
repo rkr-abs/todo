@@ -10,11 +10,11 @@ const Todos = (context) => {
 	const filteredTodos = TodoManager.filterTodo[tabValue](todos);
 
 	return (
-		<Box sx={ {
+		<Box { ...{ sx: {
 			display: 'flex',
 			alignItems: 'center',
 			flexDirection: 'column',
-		} }
+		}} }
 		>
 			<SelectAllTodos { ...context }/>
 			{map(filteredTodos, (todo, i) =>

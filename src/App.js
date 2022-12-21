@@ -1,6 +1,6 @@
 import './App.scss';
-import { Box } from '@mui/material';
 import { React } from 'react';
+import { Box } from '@mui/material';
 import ClearCompletedTodos from './components/ClearCompletedTodos';
 import InputField from './components/InputField';
 import ToDoList from './components/ToDoList';

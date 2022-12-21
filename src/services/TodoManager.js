@@ -9,7 +9,7 @@ const getTodo = ({ todoInput }) => ({
 	isActive: true,
 });
 
-const isInputEmpty = ({ todoInput }) => todoInput === '';
+const isInputEmpty = ({ state: { todoInput }}) => todoInput === '';
 
 const deleteTodo = ({ state: { todos }, data: { id }}) =>
 	filter(todos, (todo) => todo.id !== id);
@@ -22,8 +22,8 @@ const addTodo = ({ state }) =>
 
 const filterTodo = {
 	0: (todos) => todos,
-	1: (todos) => filter(todos, (todo) => todo.isActive === true),
-	2: (todos) => filter(todos, (todo) => todo.isActive !== true),
+	1: (todos) => filter(todos, (todo) => todo.isActive),
+	2: (todos) => filter(todos, (todo) => !todo.isActive),
 };
 
 const changeStatus = ({ state: { todos }, data }) =>
