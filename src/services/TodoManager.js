@@ -32,6 +32,9 @@ const changeStatus = ({ state: { todos }, data }) =>
 			? { ...todo, isActive: !data.isActive }
 			: todo));
 
+const selectAllTodos = ({ state: { todos }, data }) =>
+	map(todos, (todo) => ({ ...todo, isActive: !data }));
+
 const TodoManager = {
 	addTodo,
 	deleteTodo,
@@ -39,6 +42,7 @@ const TodoManager = {
 	changeStatus,
 	isInputEmpty,
 	clearCompletedTodos,
+	selectAllTodos,
 };
 
 export default TodoManager;

@@ -1,5 +1,5 @@
-import { Tab, Box } from '@mui/material';
 import { React } from 'react';
+import { Tab, Box } from '@mui/material';
 import { TabContext, TabPanel, TabList } from '@mui/lab';
 import Todos from './Todos';
 
@@ -9,7 +9,7 @@ const props = {
 	borderColor: 'divider',
 };
 
-const ToDoLists = (context) => {
+const ToDoList = (context) => {
 	const { state: { tabValue }, actions } = context;
 
 	return <TabContext value={ tabValue }>
@@ -27,4 +27,4 @@ const ToDoLists = (context) => {
 	</TabContext>;
 };
 
-export default ToDoLists;
+export default ToDoList;

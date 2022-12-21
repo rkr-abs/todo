@@ -1,8 +1,9 @@
+import { React } from 'react';
 import { map } from '@laufire/utils/collection';
 import { Box } from '@mui/material';
-import { React } from 'react';
 import TodoManager from '../services/TodoManager';
 import Todo from './Todo';
+import SelectAllTodos from './SelectAllTodo';
 
 const Todos = (context) => {
 	const { state: { tabValue, todos }} = context;
@@ -15,6 +16,7 @@ const Todos = (context) => {
 			flexDirection: 'column',
 		} }
 		>
+			<SelectAllTodos { ...context }/>
 			{map(filteredTodos, (todo, i) =>
 				<Todo key={ i } { ...{ ...context, data: todo } }/>)}
 		</Box>);

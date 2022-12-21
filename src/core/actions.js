@@ -6,6 +6,11 @@ const setInput = (context) => ({
 
 const changeStatus = (context) => ({
 	todos: TodoManager.changeStatus(context),
+	isActive: context.data.isActive,
+});
+
+const selectAllTodos = (context) => ({
+	todos: TodoManager.selectAllTodos(context),
 });
 
 const toggleTab = (context) => ({
@@ -19,6 +24,7 @@ const deleteTodo = (context) => ({
 const clearCompletedTodos = (context) => ({
 	todos: TodoManager.clearCompletedTodos(context),
 });
+
 const addTodo = (context) => ({
 	todos: TodoManager.addTodo(context),
 	todoInput: '',
@@ -31,6 +37,7 @@ const actions = {
 	toggleTab,
 	changeStatus,
 	clearCompletedTodos,
+	selectAllTodos,
 };
 
 export default actions;

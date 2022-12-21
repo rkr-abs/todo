@@ -9,6 +9,7 @@ const props = ({ data, actions }) => ({
 	checkedIcon: <Favorite/>,
 	onClick: (evt) =>
 		actions.changeStatus({ isActive: evt.target.checked, id: data.id }),
+	checked: !data.isActive,
 });
 
 const Todo = (context) => {
