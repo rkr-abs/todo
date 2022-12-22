@@ -3,22 +3,22 @@ import { rndString } from '@laufire/utils/random';
 
 const idLength = 8;
 
+const isInputEmpty = ({ state: { todoInput }}) => todoInput === '';
+
 const getTodo = ({ todoInput }) => ({
 	id: rndString(idLength),
 	name: todoInput,
 	isActive: true,
 });
 
-const isInputEmpty = ({ state: { todoInput }}) => todoInput === '';
+const addTodo = ({ state }) =>
+	[...state.todos, getTodo(state)];
 
 const deleteTodo = ({ state: { todos }, data: { id }}) =>
 	filter(todos, (todo) => todo.id !== id);
 
 const clearCompletedTodos = ({ state: { todos }}) =>
 	filter(todos, (todo) => todo.isActive);
-
-const addTodo = ({ state }) =>
-	[...state.todos, getTodo(state)];
 
 const filterTodo = {
 	0: (todos) => todos,
@@ -35,14 +35,18 @@ const changeStatus = ({ state: { todos }, data }) =>
 const selectAllTodos = ({ state: { todos }, data }) =>
 	map(todos, (todo) => ({ ...todo, isActive: !data }));
 
+const isAllTodosSelected = ({ state: { todos }}) =>
+	todos.every((todo) => !todo.isActive);
+
 const TodoManager = {
+	isInputEmpty,
 	addTodo,
 	deleteTodo,
 	filterTodo,
 	changeStatus,
-	isInputEmpty,
 	clearCompletedTodos,
 	selectAllTodos,
+	isAllTodosSelected,
 };
 
 export default TodoManager;
