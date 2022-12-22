@@ -9,7 +9,7 @@ const ClearCompletedTodos = ({ data, actions }) =>
 		size: 'small',
 		onClick: () => actions.clearCompletedTodos(data),
 	} }
-	>
-		Clear All<ClearTwoToneIcon/> </Button>;
+	>Clear All<ClearTwoToneIcon/>
+	</Button>;
 
 export default ClearCompletedTodos;

@@ -1,10 +1,10 @@
 import { filter, map } from '@laufire/utils/collection';
 import { rndString } from '@laufire/utils/random';
 
-const eight = 8;
+const idLength = 8;
 
 const getTodo = ({ todoInput }) => ({
-	id: rndString(eight),
+	id: rndString(idLength),
 	name: todoInput,
 	isActive: true,
 });
@@ -15,7 +15,7 @@ const deleteTodo = ({ state: { todos }, data: { id }}) =>
 	filter(todos, (todo) => todo.id !== id);
 
 const clearCompletedTodos = ({ state: { todos }}) =>
-	filter(todos, (todo) => todo.isActive !== false);
+	filter(todos, (todo) => todo.isActive);
 
 const addTodo = ({ state }) =>
 	[...state.todos, getTodo(state)];
