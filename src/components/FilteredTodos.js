@@ -1,5 +1,5 @@
-import { map } from '@laufire/utils/collection';
 import { React } from 'react';
+import { map } from '@laufire/utils/collection';
 import TodoManager from '../services/TodoManager';
 import Todo from './Todo';
 

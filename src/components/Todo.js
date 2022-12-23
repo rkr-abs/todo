@@ -1,10 +1,11 @@
 import { FavoriteBorder, Favorite } from '@mui/icons-material';
-import { Box, Checkbox } from '@mui/material';
 import { React } from 'react';
+import { Box, Checkbox } from '@mui/material';
 import DeleteTodo from './DeleteTodo';
+import TodoName from './TodoName';
 
 const Todo = (context) => {
-	const { data: { name, id, isActive }, actions } = context;
+	const { data: { id, isActive }, actions } = context;
 
 	return <Box>
 		<Checkbox { ...{
@@ -16,7 +17,7 @@ const Todo = (context) => {
 			checked: !isActive,
 		} }
 		/>
-		<span>{name}</span>
+		<TodoName { ...context }/>
 		<DeleteTodo { ...context }/></Box>;
 };
 
