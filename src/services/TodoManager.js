@@ -12,7 +12,7 @@ const getTodo = ({ todoInput }) => ({
 });
 
 const updateTodo = ({ state: { todos, editedTodo, todoInput }}) =>
-	map(todos, (todo) => (editedTodo.id === todo.id
+	map(todos, (todo) => (editedTodo === todo.id
 		? { ...todo, name: todoInput }
 		: todo
 	));

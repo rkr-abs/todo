@@ -1,7 +1,7 @@
 import { React } from 'react';
 import { Box } from '@mui/material';
-import AddTodo from './AddTodo';
 import TodoInput from './TodoInput';
+import ActionButton from './ActionButton';
 
 const InputField = (context) =>
 	<Box { ...{ sx: {
@@ -9,7 +9,7 @@ const InputField = (context) =>
 	}} }
 	>
 		<TodoInput { ...context }/>
-		<AddTodo { ...context }/>
+		<ActionButton { ...context }/>
 	</Box>;
 
 export default InputField;

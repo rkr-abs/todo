@@ -32,20 +32,14 @@ const addTodo = (context) => ({
 
 const updateTodo = (context) => ({
 	todos: TodoManager.updateTodo(context),
-	editedTodo: {},
+	editedTodo: null,
 	todoInput: '',
-	todoButton: 'Add',
 });
 
-const editTodo = (context) => {
-	const { data } = context;
-
-	return {
-		todoInput: data.name,
-		todoButton: 'update',
-		editedTodo: { ...data },
-	};
-};
+const editTodo = ({ data: { name, id }}) => ({
+	todoInput: name,
+	editedTodo: id,
+});
 
 const actions = {
 	setInput,

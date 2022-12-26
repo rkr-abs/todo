@@ -18,8 +18,7 @@ const seed = {
 	],
 	todoInput: '',
 	tabValue: 0,
-	todoButton: 'Add',
-	editedTodo: {},
+	editedTodo: null,
 };
 
 export default seed;

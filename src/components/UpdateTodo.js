@@ -3,7 +3,7 @@ import { Box, Button } from '@mui/material';
 import AddTaskIcon from '@mui/icons-material/AddTask';
 import TodoManager from '../services/TodoManager';
 
-const AddTodo = (context) => {
+const UpdateTodo = (context) => {
 	const { actions } = context;
 
 	return <Box>
@@ -11,14 +11,14 @@ const AddTodo = (context) => {
 			{ ...{
 				variant: 'contained',
 				disabled: TodoManager.isInputEmpty(context),
-				onClick: () => actions.addTodo(context),
+				onClick: () => actions.updateTodo(context),
 				sx: { margin: '2px', padding: '12px' },
 			} }
 		>
 			<AddTaskIcon { ...{ sx: { padding: '2px' }} }/>
-			Add
+			Update
 		</Button>
 	</Box>;
 };
 
-export default AddTodo;
+export default UpdateTodo;
