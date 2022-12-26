@@ -11,7 +11,7 @@ const SelectAllTodos = (context) => {
 			checkedIcon: <Favorite/>,
 			icon: <FavoriteBorder/>,
 			onClick: (evt) => actions.selectAllTodos(evt.target.checked),
-			checked: TodoManager.isAllTodosSelected(context),
+			checked: TodoManager.isAllTodoSelected(context),
 		} }
 		/>Select All</Box>;
 };

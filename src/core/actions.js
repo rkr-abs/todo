@@ -36,9 +36,9 @@ const updateTodo = (context) => ({
 	todoInput: '',
 });
 
-const editTodo = ({ data: { name, id }}) => ({
-	todoInput: name,
-	editedTodo: id,
+const editTodo = ({ data }) => ({
+	todoInput: data.name,
+	editedTodo: data,
 });
 
 const actions = {

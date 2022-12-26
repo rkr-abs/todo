@@ -1,7 +1,7 @@
 import { React } from 'react';
 import { Box, Button } from '@mui/material';
-import AddTaskIcon from '@mui/icons-material/AddTask';
 import TodoManager from '../services/TodoManager';
+import UpgradeIcon from '@mui/icons-material/Upgrade';
 
 const UpdateTodo = (context) => {
 	const { actions } = context;
@@ -15,7 +15,7 @@ const UpdateTodo = (context) => {
 				sx: { margin: '2px', padding: '12px' },
 			} }
 		>
-			<AddTaskIcon { ...{ sx: { padding: '2px' }} }/>
+			<UpgradeIcon { ...{ sx: { padding: '2px' }} }/>
 			Update
 		</Button>
 	</Box>;

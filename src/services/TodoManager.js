@@ -11,12 +11,6 @@ const getTodo = ({ todoInput }) => ({
 	isActive: true,
 });
 
-const updateTodo = ({ state: { todos, editedTodo, todoInput }}) =>
-	map(todos, (todo) => (editedTodo === todo.id
-		? { ...todo, name: todoInput }
-		: todo
-	));
-
 const addTodo = ({ state }) =>
 	[...state.todos, getTodo(state)];
 
@@ -41,8 +35,14 @@ const changeStatus = ({ state: { todos }, data }) =>
 const selectAllTodos = ({ state: { todos }, data }) =>
 	map(todos, (todo) => ({ ...todo, isActive: !data }));
 
-const isAllTodosSelected = ({ state: { todos }}) =>
+const isAllTodoSelected = ({ state: { todos }}) =>
 	todos.every((todo) => !todo.isActive);
+
+const updateTodo = ({ state: { todos, editedTodo, todoInput }}) =>
+	map(todos, (todo) => (editedTodo.id === todo.id
+		? { ...todo, name: todoInput }
+		: todo
+	));
 
 const TodoManager = {
 	isInputEmpty,
@@ -52,7 +52,7 @@ const TodoManager = {
 	changeStatus,
 	clearCompletedTodos,
 	selectAllTodos,
-	isAllTodosSelected,
+	isAllTodoSelected,
 	updateTodo,
 };
 

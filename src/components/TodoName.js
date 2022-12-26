@@ -1,14 +1,14 @@
 import { React } from 'react';
 
 const TodoName = (context) => {
-	const { data: { name, id }, actions } = context;
+	const { data, actions } = context;
 
 	return (
 		<span
 			{ ...{
-				onClick: () => actions.editTodo({ name, id }),
+				onClick: () => actions.editTodo(data),
 			} }
-		> {name} </span>
+		> {data.name} </span>
 	);
 };
 
