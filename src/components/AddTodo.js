@@ -4,21 +4,25 @@ import AddTaskIcon from '@mui/icons-material/AddTask';
 import TodoManager from '../services/TodoManager';
 
 const AddTodo = (context) => {
-	const { actions } = context;
+	const { actions, state: { todoButton }} = context;
+	const editedTodo = {
+		Add: () => actions.addTodo(context),
+		update: () => actions.updateTodo(context),
+	};
 
 	return <Box>
 		<Button
 			{ ...{
 				variant: 'contained',
 				disabled: TodoManager.isInputEmpty(context),
-				onClick: () => actions.addTodo(),
+				onClick: editedTodo[todoButton],
 				sx: { margin: '2px', padding: '12px' },
 			} }
 		>
 			<AddTaskIcon { ...{ sx: { padding: '2px' }} }/>
-			Add
+			{todoButton}
 		</Button>
 	</Box>;
-} ;
+};
 
 export default AddTodo;

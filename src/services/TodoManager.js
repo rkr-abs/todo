@@ -11,6 +11,12 @@ const getTodo = ({ todoInput }) => ({
 	isActive: true,
 });
 
+const updateTodo = ({ state: { todos, editedTodo, todoInput }}) =>
+	map(todos, (todo) => (editedTodo.id === todo.id
+		? { ...todo, name: todoInput }
+		: todo
+	));
+
 const addTodo = ({ state }) =>
 	[...state.todos, getTodo(state)];
 
@@ -47,6 +53,7 @@ const TodoManager = {
 	clearCompletedTodos,
 	selectAllTodos,
 	isAllTodosSelected,
+	updateTodo,
 };
 
 export default TodoManager;
